@@ -1,8 +1,6 @@
 from flask import Flask
+import requests
 import json
-
-
-
 
 
 def checkRequest(url: str, token: str):
