@@ -1,14 +1,12 @@
 from flask import Flask
 import requests
-import json
 
 
 def checkRequest(url: str, token: str):
 
     check_json = None
 
-
-base_url = "http://api.postmon.com.br/v1/cep/30170010" 
+base_url = "http://api.postmon.com.br/v1/cep/30170010"
 
 response = requests.get(base_url)
 data = response.json
@@ -19,4 +17,14 @@ else:
     print('Down', response.status_code)
 
 
-    
+####################################################################
+
+app = Flask("Health-Check")
+
+@app.route('/', methods=['GET'])
+def hc():
+    return 'HealthCheck-API', 200
+
+if __name__=='__main__':
+    app.run(debug=True)
+

@@ -1,14 +1,19 @@
+from flask import Flask
 import requests
-import json
 
-def FactoryRequest(url: str, token: str):
 
-    cat_json = None
+def checkRequest(url: str, token: str):
 
-    try:
-        response = requests.get(url=url, headers={'x-api-key':token},verify=True)
-        response_json = response.json()
-    except Exception as exception:
-        print ("Ops: Something Else",exception)
-    
-    return response_json
+    check_json = None
+
+
+base_url = "http://api.postmon.com.br/v1/cep/30170010"
+
+response = requests.get(base_url)
+data = response.json
+
+if response.status_code == 200:
+    print('Check == ', response.status_code)
+else:
+    print('Down', response.status_code)
+
