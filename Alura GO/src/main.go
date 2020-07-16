@@ -17,4 +17,12 @@ func main() {
 
 	fmt.Println(contaDoGustavo)
 	fmt.Println(contaBruna)
+
+	var contaDaCris *ContaCorrente //* -> alocar espaço na memoria para variável
+	contaDaCris = new(ContaCorrente)
+	contaDaCris.titular = "Cris"
+	contaDaCris.saldo = 500
+
+	fmt.Println(contaDaCris)
+
 }
