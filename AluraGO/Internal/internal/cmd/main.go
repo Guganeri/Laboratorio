@@ -1,8 +1,9 @@
 package main
 
 import (
-	"/src/contas"
 	"fmt"
+
+	"github.com/Guganeri/Laboratorio/AluraGo/src/contas"
 )
 
 func main() {
@@ -23,8 +24,8 @@ func main() {
 	//status, valor := contaDaSilva.Depositar(2000)
 	//fmt.Println(status, valor)
 
-	contaDoGustavo := contas.ContaCorrente{titular: "Gustavo", saldo: 300.0}
-	contaDaSilvia := contas.ContaCorrente{titular: "Silvida", saldo: 100.0}
+	contaDoGustavo := contas.ContaCorrente{Titular: "Gustavo", Saldo: 300.0}
+	contaDaSilvia := contas.ContaCorrente{Titular: "Silvida", Saldo: 100.0}
 
 	//status := contaDaSilvia.Transferir(50, &contaDoGustavo)
 	//fmt.Println(status)
