@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/Guganeri/Laboratorio/AluraGo/src/contas"
+	"github.com/Guganeri/Laboratorio/AluraGo/internal/pkg/contas"
 )
 
 func main() {
