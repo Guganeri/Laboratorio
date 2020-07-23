@@ -1,11 +1,9 @@
 package contas
 
-import {
-	"github.com/Guganeri/Laboratorio/AluraGo/internal/pkg/clientes"
-}
+import "github.com/Guganeri/Laboratorio/AluraGO/pkg/clientes"
 
 type ContaCorrente struct {
-	Titular clientes.Titular
+	Titular       clientes.Titular
 	NumeroAgencia int
 	NumeroConta   int
 	Saldo         float64

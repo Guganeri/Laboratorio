@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/Guganeri/Laboratorio/AluraGo/internal/pkg/contas"
+	"github.com/Guganeri/Laboratorio/AluraGO/pkg/clientes"
+	"github.com/Guganeri/Laboratorio/AluraGO/pkg/contas"
 )
 
 func main() {
@@ -24,18 +25,10 @@ func main() {
 	//status, valor := contaDaSilva.Depositar(2000)
 	//fmt.Println(status, valor)
 
-	contaDoGustavo := contas.ContaCorrente{Titular: "Gustavo", Saldo: 300.0}
-	contaDaSilvia := contas.ContaCorrente{Titular: "Silvida", Saldo: 100.0}
+	contaDoBruno := contas.ContaCorrente{Titular: clientes.Titular{
+		Nome:      "Bruno",
+		CPF:       "123.123.123.12",
+		Profissao: "Desenvolvedor"}, NumeroAgencia: 123, NumeroConta: 123123123, Saldo: 1000}
 
-	//status := contaDaSilvia.Transferir(50, &contaDoGustavo)
-	//fmt.Println(status)
-
-	fmt.Println(contaDoGustavo)
-	fmt.Println(contaDaSilvia)
-
-	status := contaDoGustavo.Transferir(100, &contaDaSilvia)
-	fmt.Println(status)
-	fmt.Println(contaDaSilvia)
-	fmt.Println(contaDoGustavo)
-
+	fmt.Println(contaDoBruno)
 }
