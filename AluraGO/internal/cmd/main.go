@@ -25,10 +25,7 @@ func main() {
 	//status, valor := contaDaSilva.Depositar(2000)
 	//fmt.Println(status, valor)
 
-	contaDoBruno := contas.ContaCorrente{Titular: clientes.Titular{
-		Nome:      "Bruno",
-		CPF:       "123.123.123.12",
-		Profissao: "Desenvolvedor"}, NumeroAgencia: 123, NumeroConta: 123123123, Saldo: 1000}
-
+	clienteBruno := clientes.Titular{"Bruno", "123.123.123.12", "Desenvolvedor GO"}
+	contaDoBruno := contas.ContaCorrente{clienteBruno, 123, 123123, 100}
 	fmt.Println(contaDoBruno)
 }
