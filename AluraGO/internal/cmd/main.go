@@ -25,7 +25,12 @@ func main() {
 	//status, valor := contaDaSilva.Depositar(2000)
 	//fmt.Println(status, valor)
 
-	clienteBruno := clientes.Titular{"Bruno", "123.123.123.12", "Desenvolvedor GO"}
-	contaDoBruno := contas.ContaCorrente{clienteBruno, 123, 123123, 100}
-	fmt.Println(contaDoBruno)
+	contaExemplos := clientes.Titular{"Bruno", "1213123", "212312312"}
+
+	fmt.Println(contaExemplos)
+
+	contaExemplo := contas.ContaCorrente{}
+	contaExemplo.Depositar(100)
+
+	fmt.Println(contaExemplo.ObterSaldo())
 }
