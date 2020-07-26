@@ -3,9 +3,16 @@ package main
 import (
 	"fmt"
 
-	"github.com/Guganeri/Laboratorio/AluraGO/pkg/clientes"
 	"github.com/Guganeri/Laboratorio/AluraGO/pkg/contas"
 )
+
+func PagarBoleto(conta vertificarConta, valorBoleto float64) {
+	conta.Sacar(valorBoleto)
+}
+
+type vertificarConta interface {
+	Sacar(valor float64) string
+}
 
 func main() {
 	//var contaDoGustavo ContaCorrente = ContaCorrente{}
@@ -25,12 +32,21 @@ func main() {
 	//status, valor := contaDaSilva.Depositar(2000)
 	//fmt.Println(status, valor)
 
-	contaExemplos := clientes.Titular{"Bruno", "1213123", "212312312"}
+	//contaExemplos := clientes.Titular{"Bruno", "1213123", "212312312"}
 
-	fmt.Println(contaExemplos)
+	//fmt.Println(contaExemplos)
 
-	contaExemplo := contas.ContaCorrente{}
-	contaExemplo.Depositar(100)
+	//contaExemplo := contas.ContaCorrente{}
+	//contaExemplo.Depositar(100)
 
-	fmt.Println(contaExemplo.ObterSaldo())
+	//fmt.Println(contaExemplo.ObterSaldo())
+
+	contaDoDenis := contas.ContaPoupanca{}
+	contaDoDenis.Depositar(100)
+	PagarBoleto(&contaDoDenis, 60)
+
+	//contaDaPati := contas.ContaCorrente{}
+
+	fmt.Println(contaDoDenis.ObterSaldo())
+	//fmt.Println(contaDaPati)
 }
