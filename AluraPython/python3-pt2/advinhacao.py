@@ -7,7 +7,8 @@ numero_secreto = 52
 while True:    
     chute = int(input("Digite o valor do chute: "))
     if chute == numero_secreto:  
-        print("Você acertou !!")      
+        print("Você acertou !!")  
+        print("{}".format(numero_secreto))    
         break
     else:
         if chute > numero_secreto:            
