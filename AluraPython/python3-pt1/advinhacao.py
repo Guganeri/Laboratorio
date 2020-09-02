@@ -1,8 +1,11 @@
+import random
 print("*****************************")
 print("Bem-vindo ao jogo de advinhação")
 print("*****************************")
 
-numero_secreto = 52
+
+
+numero_secreto = random.randrange(1,101)
 
 while True:    
     chute = int(input("Digite o valor do chute: "))
