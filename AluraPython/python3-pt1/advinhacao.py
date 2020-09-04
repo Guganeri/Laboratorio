@@ -22,3 +22,6 @@ def jogar():
                 print("Tente um valor maior")
 
     print("FIM")
+
+if (__name__ == "__main__"):
+    jogar()
