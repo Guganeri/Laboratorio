@@ -17,17 +17,25 @@ class Conta:
     def sacar(self, valor):
         self.__saldo -= valor
 
+
+###GET
     def transfe(self, valor, destino):
         self.sacar(valor)
         destino.depositar(valor)
-
-
 
     def get_saldo(self):
         return self.__saldo
 
     def get_titular(self):
         return self.__titular
-
-    def get_limite(self):
+    #utilizando property para acessar váriavél chamando "diretamente"
+    @property
+    def limite(self):
         return self.__limite
+
+ ### Setter   
+    #utilizando setter para setar atributo "diretamente"
+    @limite.setter
+    def limite(self, limite):
+        self.__limite = limite
+
