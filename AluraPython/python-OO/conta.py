@@ -23,11 +23,11 @@ class Conta:
 
 
 
-    def pega_saldo(self):
+    def get_saldo(self):
         return self.__saldo
 
-    def pega_titular(self):
+    def get_titular(self):
         return self.__titular
 
-    def pega_limite(self):
+    def get_limite(self):
         return self.__limite
