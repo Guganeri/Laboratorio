@@ -7,15 +7,23 @@ class Conta:
         self.__titular = titular
         self.__saldo = saldo
         self.__limite = limite
+        self.__codigo_banco = "001"
     
     def extrato(self):
         print("Saldo {} do titular {}".format(self.__saldo, self.__titular))
 
     def depositar(self, valor):
         self.__saldo += valor
+
+    def __pode_sacar(self, valor_a_sacar):
+        valor_disponivel_a_sacar = self.__saldo + self.__limite
+        return valor_a_sacar <= valor_disponivel_a_sacar
     
     def sacar(self, valor):
-        self.__saldo -= valor
+        if (self.__pode_sacar(valor)):
+            self.__saldo -= valor
+        else:
+            print("O valor {} passou do limite".format(valor))
 
 
 ###GET
@@ -28,14 +36,17 @@ class Conta:
 
     def get_titular(self):
         return self.__titular
-    #utilizando property para acessar váriavél chamando "diretamente"
+    
     @property
     def limite(self):
         return self.__limite
 
  ### Setter   
-    #utilizando setter para setar atributo "diretamente"
+    
     @limite.setter
     def limite(self, limite):
         self.__limite = limite
 
+    @property
+    def condigo_banco(self):
+        return self.__codigo_banco
