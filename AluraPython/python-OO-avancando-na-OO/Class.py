@@ -41,8 +41,22 @@ class Serie(Programa):
         return f'{self.nome} - {self.ano} - {self.temporadas} Temporada(s) - {self.likes} Like(s)'
 
 
+class Playlist(list):
+    def __init__(self, nome, programas):
+        self.nome = nome
+        super().__init__(programas)
+    
+
+
 vingadores = Filme("vingadores - guerra Infinita", "2018", "03 horas")
 vingadores.dar_like()
+
+avatar = Filme("Avatar - A lenda de Ang", "2010", "03 horas")
+avatar.dar_like()
+avatar.dar_like()
+avatar.dar_like()
+avatar.dar_like()
+avatar.dar_like()
 #print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano} '
 #       f'- Duracao: {vingadores.duracao} - Likes: {vingadores.likes}')
 
@@ -50,11 +64,22 @@ atlanta = Serie("atlanta", "2018", "02")
 atlanta.dar_like()
 atlanta.dar_like()
 
+dark = Serie("Dark", "2019", "03")
+dark.dar_like()
+dark.dar_like()
+dark.dar_like()
+dark.dar_like()
+dark.dar_like()
 #print(f'Nome: {atlanta.nome} - Ano: {atlanta.ano} '
 #       f'- Temporadas: {atlanta.temporadas} - Likes: {atlanta.likes}')
 
 
-filmes_e_series = [vingadores, atlanta]
+filmes_e_series = [vingadores, atlanta, dark, avatar]
+playlist_fim_de_semana = Playlist('fim de semana', filmes_e_series)
 
-for programa in filmes_e_series:
+print(f'Tamanho da playlist: {len(playlist_fim_de_semana)}')
+
+for programa in playlist_fim_de_semana:
     print(programa)
+
+print(f'Tá ou não tá? {avatar in playlist_fim_de_semana}')
