@@ -1,0 +1,1 @@
+print("Teste", "sep", sep="-", end="\n")
