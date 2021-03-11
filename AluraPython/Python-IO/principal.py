@@ -1,11 +1,12 @@
+import contatos_utils
+
 try:
-    with open('contatos.csv', encoding='latin_1', mode='r') as arquivo_contatos:
-    #conteudo = arquivo_contatos.readline()
-        for linha in arquivo_contatos:
-            print(linha, end='')
+    contatos = contatos_utils.csv_para_contatos('contatos-escrita.csv')
+
+    for contato in contatos: 
+        print(f'{contato.id} - {contato.nome} - {contato.email}')
+
 except FileNotFoundError:
     print('Arquivo não encontrado')
 except PermissionError:
-    print('Sem permissão de escrita')
-finally:
-    arquivo_contatos.close()
+    print('Sem permissão de escrita')    
