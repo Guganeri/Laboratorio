@@ -1,5 +1,2 @@
-
-argumento = "moedaorigem=real"
-index = argumento.find("=")
-substring = argumento[index+1:]
-print(substring)
+url = 'https://bytebank.com/cambio?moedaOrigem=real&moedaDestino=dolar&quantidade=100'
+print(url)
