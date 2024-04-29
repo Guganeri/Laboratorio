@@ -1,4 +1,7 @@
-print("""
+import os
+
+def showtime():
+    print("""
 ░█████╗░██████╗░██████╗░░█████╗░███████╗███╗░░██╗░█████╗░
 ██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝████╗░██║██╔══██╗
 ███████║██████╔╝██████╔╝██║░░██║█████╗░░██╔██╗██║███████║
@@ -14,15 +17,32 @@ print("""
 ╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝╚═════╝░╚══════╝╚═╝░░╚══╝╚═╝╚═╝░░╚══╝░╚═════╝░
 """)
 
-print('1. Agent Verify')
-print('2. APM Verify')
-print('3. Exit\n')
+def showmenu():
+    print('Menu')
+    print('1. Agent Verify')
+    print('2. APM Verify')
+    print('3. Exit\n')
 
-op = input('')
+def finish_app():
+    os.system('clear')
+    print('Poweroff...\n')
 
-if op == '1':
-    print('Agent Verify')
-elif op == 2:
-    print('APM Verify')
-else:
-    print('Exit')
+def choose_option():
+    op = int(input(''))
+    match op:
+        case 1:
+            print('Agent Verify')
+        case 2:
+            print('APM Verify')
+        case 3:
+            finish_app()
+        case _:
+            print('Invalid option!')
+
+def main():
+    showtime()
+    showmenu()
+    choose_option()
+
+if __name__ == '__main__':
+    main()
