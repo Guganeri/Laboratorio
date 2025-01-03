@@ -3,7 +3,7 @@ import http from "http";
 const PORT = 3000;
 
 const rotas = {
-    "/": "Curso de Node.js 2!!",
+    "/": "Curso de Node.js!!",
 
     "/livros": "Entrei na rota Livros",
 
